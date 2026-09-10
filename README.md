@@ -32,6 +32,23 @@ npm run build
 npm start
 ```
 
+### Deploying to Vercel
+
+The repository includes a Vercel serverless entry point and catch-all rewrite. Import the
+repository into Vercel, then add `GITHUB_TOKEN` under **Project Settings → Environment
+Variables** for Production, Preview, and Development as needed. Redeploy after adding or
+changing the token.
+
+Optional variables such as `CORS_ORIGIN` and `CACHE_TTL_SECONDS` can be configured in the
+same place. Do not upload the local `.env` file or expose its token in client-side variables.
+
+After deployment, verify:
+
+```text
+https://your-project.vercel.app/health
+https://your-project.vercel.app/api/github/profile/zihan231
+```
+
 ## Environment variables
 
 | Variable               | Required | Default  | Description                               |
