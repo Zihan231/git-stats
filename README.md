@@ -39,8 +39,9 @@ path to that function while preserving the original URL for Express routing. The
 kept separately in `src/local.ts`, so Vercel cannot accidentally auto-detect and invoke it. Import
 the repository into Vercel, then add `GITHUB_TOKEN` under **Project Settings → Environment
 Variables** for Production, Preview, and Development as needed. Redeploy after adding or changing
-the token. The repository configuration explicitly clears any dashboard Output Directory because
-this API-only project does not produce a `public` frontend build.
+the token. A minimal `public` directory is included for compatibility with Vercel projects whose
+dashboard configuration requires an Output Directory; application requests still route to the API
+function.
 
 Optional variables such as `CORS_ORIGIN` and `CACHE_TTL_SECONDS` can be configured in the
 same place. Do not upload the local `.env` file or expose its token in client-side variables.
