@@ -44,6 +44,17 @@ export function createApp(options: AppOptions): Express {
     }),
   );
 
+  app.get('/', (_req, res) =>
+    res.status(200).json({
+      success: true,
+      data: {
+        service: 'GitHub Developer Analytics API',
+        health: '/health',
+        profile: '/api/github/profile/:username',
+      },
+    }),
+  );
+  app.get('/favicon.ico', (_req, res) => res.status(204).end());
   app.get('/health', (_req, res) =>
     res.status(200).json({ success: true, data: { status: 'ok' } }),
   );

@@ -37,6 +37,28 @@ const rawData: GitHubRawData = {
 };
 
 describe('GitHub profile API', () => {
+  it('describes the service at its root URL', async () => {
+    const dataSource: GitHubDataSource = { getDeveloperData: jest.fn() };
+    const app = createApp({ analyticsService: new AnalyticsService(dataSource) });
+    const response = await request(app).get('/');
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual({
+      success: true,
+      data: {
+        service: 'GitHub Developer Analytics API',
+        health: '/health',
+        profile: '/api/github/profile/:username',
+      },
+    });
+  });
+
+  it('returns an empty favicon response for browsers', async () => {
+    const dataSource: GitHubDataSource = { getDeveloperData: jest.fn() };
+    const app = createApp({ analyticsService: new AnalyticsService(dataSource) });
+    const response = await request(app).get('/favicon.ico');
+    expect(response.status).toBe(204);
+  });
+
   it('returns the documented response and caches repeated usernames', async () => {
     const dataSource: GitHubDataSource = { getDeveloperData: jest.fn().mockResolvedValue(rawData) };
     const app = createApp({
