@@ -34,11 +34,11 @@ npm start
 
 ### Deploying to Vercel
 
-Vercel automatically detects the default Express export in `src/server.ts` and packages the
-application as a single function. No custom rewrites or separate API function are required.
-Import the repository into Vercel, then add `GITHUB_TOKEN` under **Project Settings →
-Environment Variables** for Production, Preview, and Development as needed. Redeploy after
-adding or changing the token.
+Vercel automatically detects the listener started by `src/server.ts`, captures it, and packages
+the application as a single function. No custom rewrites or separate API function are required.
+Import the repository into Vercel, then add `GITHUB_TOKEN` under **Project Settings → Environment
+Variables** for Production, Preview, and Development as needed. Redeploy after adding or changing
+the token.
 
 Optional variables such as `CORS_ORIGIN` and `CACHE_TTL_SECONDS` can be configured in the
 same place. Do not upload the local `.env` file or expose its token in client-side variables.

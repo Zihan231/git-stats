@@ -19,6 +19,9 @@ export interface AppOptions {
 export function createApp(options: AppOptions): Express {
   const app = express();
   app.disable('x-powered-by');
+  // Vercel terminates the public connection at one trusted proxy hop. This also lets
+  // express-rate-limit identify the real client from X-Forwarded-For.
+  app.set('trust proxy', 1);
   app.use(helmet());
   app.use(
     cors({
