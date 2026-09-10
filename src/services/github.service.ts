@@ -1,12 +1,12 @@
 import { Octokit } from '@octokit/rest';
-import { PROFILE_QUERY } from '../graphql/profile.query.js';
+import { PROFILE_QUERY } from '../graphql/profile.query';
 import type {
   ContributionDay,
   GitHubEvent,
   GitHubRawData,
   GitHubRepository,
-} from '../types/github.js';
-import { GitHubApiError, GitHubRateLimitError, NotFoundError } from '../utils/errors.js';
+} from '../types/github';
+import { GitHubApiError, GitHubRateLimitError, NotFoundError } from '../utils/errors';
 
 interface GraphQLRepositoryNode {
   name: string;

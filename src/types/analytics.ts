@@ -1,4 +1,4 @@
-import type { GitHubRawData } from './github.js';
+import type { GitHubRawData } from './github';
 
 export interface DeveloperAnalytics {
   profile: GitHubRawData['profile'];

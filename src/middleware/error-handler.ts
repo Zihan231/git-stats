@@ -1,6 +1,6 @@
 import type { ErrorRequestHandler, RequestHandler } from 'express';
-import { AppError } from '../utils/errors.js';
-import { logger } from '../config/logger.js';
+import { AppError } from '../utils/errors';
+import { logger } from '../config/logger';
 
 export const notFoundHandler: RequestHandler = (_req, res) => {
   res.status(404).json({

@@ -34,9 +34,10 @@ npm start
 
 ### Deploying to Vercel
 
-Vercel automatically detects the listener started by `src/server.ts`, captures it, and packages
-the application as a single function. No custom rewrites or separate API function are required.
-Import the repository into Vercel, then add `GITHUB_TOKEN` under **Project Settings → Environment
+Vercel deploys `api/index.ts` as the sole Node function, and `vercel.json` rewrites every public API
+path to that function while preserving the original URL for Express routing. The local listener is
+kept separately in `src/local.ts`, so Vercel cannot accidentally auto-detect and invoke it. Import
+the repository into Vercel, then add `GITHUB_TOKEN` under **Project Settings → Environment
 Variables** for Production, Preview, and Development as needed. Redeploy after adding or changing
 the token.
 

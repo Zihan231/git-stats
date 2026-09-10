@@ -1,7 +1,7 @@
-import { createApp } from './app.js';
-import { loadConfig } from './config/env.js';
-import { AnalyticsService } from './services/analytics.service.js';
-import { GitHubService } from './services/github.service.js';
+import { createApp } from './app';
+import { loadConfig } from './config/env';
+import { AnalyticsService } from './services/analytics.service';
+import { GitHubService } from './services/github.service';
 
 export function createConfiguredApp() {
   const config = loadConfig();

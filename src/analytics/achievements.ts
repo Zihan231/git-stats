@@ -1,4 +1,4 @@
-import type { AnalyticsSignals } from '../types/analytics.js';
+import type { AnalyticsSignals } from '../types/analytics';
 
 export function calculateAchievements(signals: AnalyticsSignals): string[] {
   const achievements: string[] = [];

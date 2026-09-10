@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import type { GitHubController } from '../controllers/github.controller.js';
-import { validateUsername } from '../middleware/validate.js';
+import type { GitHubController } from '../controllers/github.controller';
+import { validateUsername } from '../middleware/validate';
 
 export function createGitHubRouter(controller: GitHubController): Router {
   const router = Router();

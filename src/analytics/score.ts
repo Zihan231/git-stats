@@ -1,4 +1,4 @@
-import type { AnalyticsSignals } from '../types/analytics.js';
+import type { AnalyticsSignals } from '../types/analytics';
 
 function ratio(value: number, target: number): number {
   return Math.min(Math.max(value / target, 0), 1);

@@ -1,5 +1,5 @@
 import type { NextFunction, Request, Response } from 'express';
-import type { AnalyticsService } from '../services/analytics.service.js';
+import type { AnalyticsService } from '../services/analytics.service';
 
 export class GitHubController {
   constructor(private readonly analytics: AnalyticsService) {}

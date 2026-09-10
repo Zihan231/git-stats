@@ -3,11 +3,11 @@ import express, { type Express } from 'express';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import pinoHttp from 'pino-http';
-import { GitHubController } from './controllers/github.controller.js';
-import { logger } from './config/logger.js';
-import { errorHandler, notFoundHandler } from './middleware/error-handler.js';
-import { createGitHubRouter } from './routes/github.routes.js';
-import type { AnalyticsService } from './services/analytics.service.js';
+import { GitHubController } from './controllers/github.controller';
+import { logger } from './config/logger';
+import { errorHandler, notFoundHandler } from './middleware/error-handler';
+import { createGitHubRouter } from './routes/github.routes';
+import type { AnalyticsService } from './services/analytics.service';
 
 export interface AppOptions {
   analyticsService: AnalyticsService;

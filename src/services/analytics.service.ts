@@ -1,11 +1,11 @@
-import { calculateAchievements } from '../analytics/achievements.js';
-import { determinePersonality } from '../analytics/personality.js';
-import { calculateDeveloperScore } from '../analytics/score.js';
-import { calculateStreaks } from '../analytics/streak.js';
-import type { AnalyticsSignals, DeveloperAnalytics } from '../types/analytics.js';
-import type { GitHubDataSource } from './github.service.js';
-import type { GitHubRawData } from '../types/github.js';
-import { MemoryCache } from '../utils/cache.js';
+import { calculateAchievements } from '../analytics/achievements';
+import { determinePersonality } from '../analytics/personality';
+import { calculateDeveloperScore } from '../analytics/score';
+import { calculateStreaks } from '../analytics/streak';
+import type { AnalyticsSignals, DeveloperAnalytics } from '../types/analytics';
+import type { GitHubDataSource } from './github.service';
+import type { GitHubRawData } from '../types/github';
+import { MemoryCache } from '../utils/cache';
 
 const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 

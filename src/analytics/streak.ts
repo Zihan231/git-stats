@@ -1,4 +1,4 @@
-import type { ContributionDay } from '../types/github.js';
+import type { ContributionDay } from '../types/github';
 
 export interface StreakResult {
   currentStreak: number;
